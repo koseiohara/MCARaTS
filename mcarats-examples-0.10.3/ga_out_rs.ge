@@ -1,0 +1,221 @@
+setshade 1
+setpanels 1 1 1 1
+
+*
+c
+set parea 1 8 1 8
+*open out_rs0067.ctl
+open test_rs0067.ctl
+
+setclevs 0.34 0.7 0.02
+d a1(t=1)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title Radiance, 670 nm, SZA=0
+printim img_rs0067_rad_t1.png x1100 y850 white
+
+c
+setclevs 0.1 0.6 0.02
+d a1(t=2)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title Radiance, 670 nm, SZA=60
+printim img_rs0067_rad_t2.png x1100 y850 white
+
+c
+setclevs 0 3.0 0.2
+d b1(t=1,z=1)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title LAMF at Z=1, 670 nm, SZA=0
+printim img_rs0067_lamf1_t1.png x1100 y850 white
+
+c
+setclevs 0 3.0 0.2
+d b1(t=1,z=21)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title LAMF at Z=21, 670 nm, SZA=0
+printim img_rs0067_lamf21_t1.png x1100 y850 white
+
+c
+setclevs 0 3.0 0.2
+d b1(t=1,z=31)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title LAMF at Z=31, 670 nm, SZA=0
+printim img_rs0067_lamf31_t1.png x1100 y850 white
+
+c
+setclevs 0 3.6 0.2
+d b1(t=2,z=1)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title LAMF at Z=1, 670 nm, SZA=60
+printim img_rs0067_lamf1_t2.png x1100 y850 white
+
+c
+setclevs 0 3.6 0.2
+d b1(t=2,z=21)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title LAMF at Z=21, 670 nm, SZA=60
+printim img_rs0067_lamf21_t2.png x1100 y850 white
+
+c
+setclevs 0 3.6 0.2
+d b1(t=2,z=31)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title LAMF at Z=31, 670 nm, SZA=60
+printim img_rs0067_lamf31_t2.png x1100 y850 white
+
+c
+setclevs 0 3.0 0.2
+set y 48
+set z 1 41
+setpanels 1 2 1 2
+d b1(t=1)
+cbar2 1 1
+draw ylab Z
+draw title LAMF at Y=48, 670 nm, SZA=0
+set z 1
+setpanels 1 2 1 1
+d a1(t=1)
+draw xlab X
+printim img_rs0067_lamf_t1_y48.png x1100 y850 white
+
+c
+setclevs 0 3.6 0.2
+set y 48
+set z 1 41
+setpanels 1 2 1 2
+d b1(t=2)
+cbar2 1 1
+draw ylab Z
+draw title LAMF at Y=48, 670 nm, SZA=60
+set z 1
+setpanels 1 2 1 1
+d a1(t=2)
+draw xlab Y
+printim img_rs0067_lamf_t2_y48.png x1100 y850 white
+
+close 1
+
+
+*
+c
+set parea 1 8 1 8
+*open out_rs0213.ctl
+open test_rs0213.ctl
+
+setclevs 0.22 0.52 0.02
+d a1(t=1)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title Radiance, 2130 nm, SZA=0
+printim img_rs0213_rad_t1.png x1100 y850 white
+
+c
+setclevs 0.02 0.4 0.02
+d a1(t=2)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title Radiance, 2130 nm, SZA=60
+printim img_rs0213_rad_t2.png x1100 y850 white
+
+c
+setclevs 0 3.0 0.2
+d b1(t=1,z=1)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title LAMF at Z=1, 2130 nm, SZA=0
+printim img_rs0213_lamf1_t1.png x1100 y850 white
+
+c
+setclevs 0 3.0 0.2
+d b1(t=1,z=21)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title LAMF at Z=21, 2130 nm, SZA=0
+printim img_rs0213_lamf21_t1.png x1100 y850 white
+
+c
+setclevs 0 3.0 0.2
+d b1(t=1,z=31)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title LAMF at Z=31, 2130 nm, SZA=0
+printim img_rs0213_lamf31_t1.png x1100 y850 white
+
+c
+setclevs 0 3.6 0.2
+d b1(t=2,z=1)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title LAMF at Z=1, 2130 nm, SZA=60
+printim img_rs0213_lamf1_t2.png x1100 y850 white
+
+c
+setclevs 0 3.6 0.2
+d b1(t=2,z=21)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title LAMF at Z=21, 2130 nm, SZA=60
+printim img_rs0213_lamf21_t2.png x1100 y850 white
+
+c
+setclevs 0 3.6 0.2
+d b1(t=2,z=31)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title LAMF at Z=31, 2130 nm, SZA=60
+printim img_rs0213_lamf31_t2.png x1100 y850 white
+
+c
+setclevs 0 3.0 0.2
+set y 48
+set z 1 41
+setpanels 1 2 1 2
+d b1(t=1)
+cbar2 1 1
+draw ylab Z
+draw title LAMF at Y=48, 2130 nm, SZA=0
+set z 1
+setpanels 1 2 1 1
+d a1(t=1)
+draw xlab Y
+printim img_rs0213_lamf_t1_y48.png x1100 y850 white
+
+c
+setclevs 0 3.6 0.2
+set y 48
+set z 1 41
+setpanels 1 2 1 2
+d b1(t=2)
+cbar2 1 1
+draw ylab Z
+draw title LAMF at Y=48, 2130 nm, SZA=60
+set z 1
+setpanels 1 2 1 1
+d a1(t=2)
+draw xlab Y
+printim img_rs0213_lamf_t2_y48.png x1100 y850 white
+
+close 1

@@ -1,0 +1,82 @@
+setshade 1
+setpanels 1 1 1 1
+
+*
+c
+set parea 1 8 1 8
+*open out_hr0213.ctl
+open test_hr0213.ctl
+
+c
+setclevs 0 1.3 0.05
+d a1(t=1)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title Direct-beam flux, 2130 nm, SZA=0
+printim img_hr0213_fdi_t1.png x1100 y850 white
+
+c
+setclevs 0 1.3 0.05
+d a1(t=2)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title Direct-beam flux, 2130 nm, SZA=60
+printim img_hr0213_fdi_t2.png x1100 y850 white
+
+c
+setclevs 0 1.3 0.05
+d a2(t=1)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title Downward flux, 2130 nm, SZA=0
+printim img_hr0213_fdn_t1.png x1100 y850 white
+
+c
+setclevs 0 1.3 0.05
+d a2(t=2)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title Downward flux, 2130 nm, SZA=60
+printim img_hr0213_fdn_t2.png x1100 y850 white
+
+
+*
+c
+set y 48
+set z 1 41
+setclevs 0 9 0.3
+setpanels 1 2 1 2
+d b1(t=1)*1000
+cbar2 1 1
+draw ylab Z
+draw title Heating rate (/km), 2130 nm, SZA=0, Y=48
+set z 1
+setpanels 1 2 1 1
+set vrange 0 1.6
+d a1(t=1)
+d a2(t=1)
+draw xlab X
+printim img_hr0213_hrt_t1_y48.png x1100 y850 white
+
+c
+set y 48
+set z 1 41
+setclevs 0 9 0.3
+setpanels 1 2 1 2
+d b1(t=2)*1000
+cbar2 1 1
+draw ylab Z
+draw title Heating rate (/km), 2130 nm, SZA=60, Y=48
+set z 1
+set vrange 0 1.6
+setpanels 1 2 1 1
+d a1(t=2)
+d a2(t=2)
+draw xlab X
+printim img_hr0213_hrt_t2_y48.png x1100 y850 white
+
+close 1

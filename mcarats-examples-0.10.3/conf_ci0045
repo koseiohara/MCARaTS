@@ -1,0 +1,231 @@
+!--- Initializations ---
+
+&mcarWld_nml_init
+ Wld_mtarget = 3 ! target mode (1=flux&HR, 2=radiance, 3=volume rendering)
+ Wld_mverb  = 1  ! verbose mode (0=quiet, 1=yes, 2=more, 3=most(for bugfix))
+ Wld_mbswap = 0
+ !Wld_jseed = 374506522
+ Wld_moptim = 2
+ Wld_njob   = 1
+/
+&mcarSca_nml_init
+ Sca_inpfile = 'les05_0045.sca'
+ Sca_mfmt = 1
+ !Sca_nskip = 0
+ !Sca_nanci = 0
+ Sca_nangi = 203
+ Sca_npf  = 60
+ !Sca_nchi = 4     ! # of orders for truncation approximation (>= 2)
+ !Sca_ntg  = 20000 ! # of table grids for angles & probabilities
+ !Sca_qtfmax = 30.0
+/
+&mcarAtm_nml_init
+ Atm_inpfile = 'les05_0045.atm'
+ Atm_mfmt = 1
+ Atm_np3d = 1
+ Atm_np1d = 2
+ Atm_nx   = 60
+ Atm_ny   = 60
+ Atm_nz   = 41
+ Atm_iz3l = 10
+ Atm_nz3  = 21
+ Atm_nkd  = 1
+ Atm_mtprof = 1
+ !Atm_nqlay = 5
+/
+&mcarSfc_nml_init
+ Sfc_inpfile = ' '
+ !Sfc_mfmt = 0
+ !Sfc_mbrdf(1:4) = 1, 1, 1, 1 ! flags of on/off status for BRDF models
+ Sfc_nxb = 1
+ Sfc_nyb = 1
+ !Sfc_nsco = 60
+ !Sfc_nsuz = 200
+/
+&mcarSrc_nml_init
+ Src_nsrc = 1
+/
+&mcarFlx_nml_init
+ !Flx_mflx = 0
+ !Flx_mhrt = 0
+ !Flx_diff0 = 1.0_R_
+ !Flx_diff1 = 0.1_R_
+/
+&mcarRad_nml_init
+ Rad_mrkind = 1 ! a kind of radiance
+ Rad_mplen = 0 ! method of calculation of pathlength statistics
+ Rad_mpmap = 1
+ Rad_nrad  = 2
+ Rad_nxr   = 400
+ Rad_nyr   = 300
+ !Rad_nwf   = 1   ! # of weighting functions
+ !Rad_ntp   = 100 ! # of total pathlength bins
+ !Rad_tpmin = 0.0_R_    ! min of total pathlength
+ !Rad_tpmax = 1.0e+5_R_ ! max of total pathlength
+/
+&mcarVis_nml_init
+ Vis_mrend  = 4     ! method for rendering (0/1/2/3/4)
+ Vis_epserr = 0.0001
+ Vis_fpsmth = 0.5
+ Vis_fatten = 1.0   ! attenuation factor (1 for physics-based rendering)
+ Vis_nqhem  = 1
+ !Vis_nqlay  = 10
+/
+&mcarPho_nml_init
+ Pho_iso_SS  = 1
+ Pho_iso_tru = 0
+ Pho_iso_max = 1000
+ !Pho_wsml   = 0.05 ! RR weight limit for local estimates
+ !Pho_wmin   = 0.2
+ !Pho_wmax   = 3.0
+ !Pho_wfac   = 1.0
+ !Pho_pfpeak = 30.0
+/
+
+!--- A New Job ---
+
+&mcarWld_nml_job
+ Wld_rmlcf = 100.0
+/
+&mcarAtm_nml_job
+ Atm_idread = 1
+ Atm_dx = 30
+ Atm_dy = 30
+ Atm_zgrd0 =   0.000000E+00,  3.000000E+01,  6.000000E+01,  9.000000E+01,  1.200000E+02,  1.500000E+02,  1.800000E+02,  2.100000E+02,  2.300000E+02,  2.500000E+02,  2.600000E+02,  2.700000E+02,  2.800000E+02,  2.900000E+02,  3.000000E+02,  3.100000E+02,  3.200000E+02,  3.300000E+02,  3.400000E+02,  3.500000E+02,  3.600000E+02,  3.700000E+02,  3.800000E+02,  3.900000E+02,  4.000000E+02,  4.100000E+02,  4.200000E+02,  4.300000E+02,  4.400000E+02,  4.500000E+02,  4.600000E+02,  6.000000E+02,  1.000000E+03,  2.000000E+03,  3.000000E+03,  4.000000E+03,  6.000000E+03,  8.000000E+03,  1.000000E+04,  1.500000E+04,  2.000000E+04,  3.000000E+04,
+ Atm_wkd0 = 1.0
+  
+ Atm_tmp1d = 289.8373, 289.4140, 289.0836, 288.7714, 288.4681, 288.1688, 287.8713, 287.5797, 287.3877, 287.1964, 287.1017, 287.0117, 286.9299, 286.8552, 286.7851, 286.7181, 286.6534, 286.5898, 286.5269, 286.4650, 286.4034, 286.3411, 286.2814, 286.2371, 286.2323, 286.3112, 286.5654, 286.9951, 287.4651, 287.8364, 288.0257, 288.4250, 289.7000, 285.2000, 279.2000, 273.2000, 261.2000, 248.2000, 235.3000, 215.7000, 219.2000, 233.7000, 
+ Atm_ext1d(1:, 1) =  2.45113E-05,  2.44561E-05,  2.43958E-05,  2.43346E-05,  2.42734E-05,  2.42117E-05,  2.41498E-05,  2.40980E-05,  2.40568E-05,  2.40256E-05,  2.40046E-05,  2.39831E-05,  2.39609E-05,  2.39383E-05,  2.39154E-05,  2.38922E-05,  2.38690E-05,  2.38456E-05,  2.38222E-05,  2.37988E-05,  2.37755E-05,  2.37520E-05,  2.37279E-05,  2.37015E-05,  2.36700E-05,  2.36279E-05,  2.35715E-05,  2.35065E-05,  2.34441E-05,  2.33933E-05,  2.31618E-05,  2.24001E-05,  2.07798E-05,  1.87793E-05,  1.69788E-05,  1.45587E-05,  1.17577E-05,  9.41149E-06,  6.07198E-06,  2.91507E-06,  9.61213E-07, 
+ Atm_omg1d(1:, 1) = 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 
+ Atm_apf1d(1:, 1) = 41*-1
+ Atm_ext1d(1:, 2) = 0.000119104414 0.000117331532 0.000115584393 0.000113863491 0.000112168331 0.000110498448 0.000108853361 0.000107500811 0.00010643078 0.000105634703 0.000105109706 0.000104583276 0.000104062572 0.000103543302 0.000103028317 0.000102513332 0.000102001206 0.000101493373 0.000100986974 0.000100483434 9.99827535E-05 9.94835063E-05 9.8987126E-05 9.84935905E-05 9.80029217E-05 9.75136936E-05 9.70273177E-05 9.65438012E-05 9.60617253E-05 9.55825017E-05 9.20835664E-05 8.05725358E-05 5.72763056E-05 3.47398418E-05 2.10707676E-05 1.02657896E-05 3.77657079E-06 1.3893233E-06 2.9687348E-07 2.43688429E-08 1.08225684E-09
+ Atm_omg1d(1:, 2) = 41*0.964682162
+ Atm_apf1d(1:, 2) = 41*2
+
+ Atm_abs1d(1: 41,1) = 7.94729E-09,  7.94729E-09,  7.94729E-09,  7.94729E-09,  7.94729E-09,  7.94729E-09,  7.94729E-09,  5.96047E-09,  5.96047E-09,  5.96045E-09,  5.96047E-09,  5.96047E-09,  5.96045E-09,  5.96047E-09,  5.96047E-09,  5.96045E-09,  5.96047E-09,  5.96047E-09,  5.96045E-09,  5.96047E-09,  5.96047E-09,  5.96045E-09,  5.96047E-09,  5.96047E-09,  5.96045E-09,  5.96047E-09,  5.96047E-09,  5.96045E-09,  5.96047E-09,  5.96047E-09,  8.51495E-09,  8.94071E-09,  8.94074E-09,  9.05995E-09,  9.35797E-09,  9.95407E-09,  1.11164E-08,  1.27258E-08,  2.29610E-08,  4.34327E-08,  4.78620E-08, 
+
+ !Atm_fext1d = 3*2.0
+ !Atm_fext3d = 3*0.3
+/
+&mcarSfc_nml_job
+ Sfc_idread = 1
+ Sfc_tmp = 300.0
+ Sfc_mtype = 2
+ Sfc_param = 0.2, 0.0, 1.33, 1.0e-9, 0.02
+ !Sfc_nudsm  = 14
+ !Sfc_nurpv  = 8
+ !Sfc_nulsrt = 14
+ !Sfc_nqpot  = 24 ! # of quadrature points for preprocess
+ !Sfc_rrmax  = 5.0
+ !Sfc_rrexp  = 0.5
+/
+&mcarSrc_nml_job
+ Src_flx   = 6.2831853
+ Src_qmax  = 0.5
+ Src_wlen  = 10.0
+ Src_dwlen = 0.0
+ Src_mtype = 1
+ Src_mphi  = 0
+ Src_the   = 120.0
+ Src_phi   = 180.0
+ Src_apsize = 0.5 ! aperture size
+/
+&mcarRad_nml_job
+ Rad_mrproj = 0
+ Rad_frmod = 0.33
+ Rad_xpos  = 5*0.45
+ Rad_ypos  = 5*0.5
+ Rad_zloc  = 95, 305, 655, 14050, 855
+ Rad_rmin0 = 5*10.0
+ Rad_rmax0 = 5*18000.0
+ Rad_the   = 90, 90, 105, 105, 105
+ Rad_phi   = 0, 0, 0, 0, 180
+ Rad_psi   = 5*270
+ Rad_umax  = 5*140
+ Rad_vmax  = 5*110
+ Rad_qmax  = 5*180.0
+ Rad_apsize = 5*0.1
+/
+
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job
+ Atm_idread = 0 /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 117.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 195 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 114.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 295 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 111.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 395 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 108.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 495 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 105.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 595 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 102.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 695 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 99.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 795 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 96.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 895 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 93.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 995 /

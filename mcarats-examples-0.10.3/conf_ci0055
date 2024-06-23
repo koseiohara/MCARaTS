@@ -1,0 +1,199 @@
+&mcarWld_nml_init
+ Wld_mtarget = 3 ! target mode (1=flux&HR, 2=radiance, 3=volume rendering)
+ Wld_mverb  = 1  ! verbose mode (0=quiet, 1=yes, 2=more, 3=most(for bugfix))
+ Wld_mbswap = 0
+ !Wld_jseed = 374506522
+ Wld_moptim = 2
+ Wld_njob   = 1
+/
+&mcarSca_nml_init
+ Sca_inpfile = 'les05_0055.sca'
+ Sca_mfmt = 1
+ Sca_nangi = 203
+ Sca_npf = 60
+/
+&mcarAtm_nml_init
+ Atm_inpfile = 'les05_0055.atm'
+ Atm_mfmt = 1
+ Atm_np3d = 1
+ Atm_np1d = 2
+ Atm_nx = 60
+ Atm_ny = 60 
+ Atm_nz =  41
+ Atm_iz3l =  10
+ Atm_nz3 =  21
+ Atm_nkd = 1
+ Atm_mtprof = 1
+/
+&mcarSfc_nml_init
+ Sfc_inpfile = ' '
+ Sfc_nxb = 1
+ Sfc_nyb = 1
+/
+&mcarSrc_nml_init
+ Src_nsrc = 1
+/
+&mcarFlx_nml_init
+/
+&mcarRad_nml_init
+ Rad_mrkind = 1
+ Rad_mplen = 0
+ Rad_mpmap = 1
+ Rad_nrad = 2
+ Rad_nxr  = 400
+ Rad_nyr  = 300
+/
+&mcarVis_nml_init
+ Vis_mrend  = 4     ! method for rendering (0/1/2/3/4)
+ Vis_epserr = 0.0001
+ Vis_fpsmth = 0.5
+ Vis_fatten = 1.0   ! attenuation factor (1 for physics-based rendering)
+ Vis_nqhem  = 1
+ !Vis_nqlay  = 10
+/
+&mcarPho_nml_init
+ Pho_iso_SS  = 1
+ Pho_iso_tru = 0
+ Pho_iso_max = 1000
+/
+
+!--- A new job ---
+
+&mcarWld_nml_job
+ Wld_rmlcf = 100.0
+/
+&mcarAtm_nml_job
+ Atm_idread = 1
+ Atm_dx = 30
+ Atm_dy = 30
+ Atm_zgrd0 =   0.000000E+00,  3.000000E+01,  6.000000E+01,  9.000000E+01,  1.200000E+02,  1.500000E+02,  1.800000E+02,  2.100000E+02,  2.300000E+02,  2.500000E+02,  2.600000E+02,  2.700000E+02,  2.800000E+02,  2.900000E+02,  3.000000E+02,  3.100000E+02,  3.200000E+02,  3.300000E+02,  3.400000E+02,  3.500000E+02,  3.600000E+02,  3.700000E+02,  3.800000E+02,  3.900000E+02,  4.000000E+02,  4.100000E+02,  4.200000E+02,  4.300000E+02,  4.400000E+02,  4.500000E+02,  4.600000E+02,  6.000000E+02,  1.000000E+03,  2.000000E+03,  3.000000E+03,  4.000000E+03,  6.000000E+03,  8.000000E+03,  1.000000E+04,  1.500000E+04,  2.000000E+04,  3.000000E+04,
+ Atm_wkd0 = 1.0
+ 
+ Atm_ext1d(1:, 2) = 9.92536734E-05 9.77762829E-05 9.63203347E-05 9.48862435E-05 9.34736163E-05 9.20820457E-05 9.07111389E-05 8.95840058E-05 8.86923226E-05 8.80289226E-05 8.75914338E-05 8.71527373E-05 8.67188137E-05 8.62860834E-05 8.58569329E-05 8.5427775E-05 8.5001011E-05 8.45778195E-05 8.4155814E-05 8.37361949E-05 8.33189624E-05 8.29029232E-05 8.24892704E-05 8.20779969E-05 8.16691099E-05 8.12614089E-05 8.08561017E-05 8.04531737E-05 8.0051439E-05 7.96520835E-05 7.6736309E-05 6.71437811E-05 4.77302528E-05 2.89498694E-05 1.75589739E-05 8.5548254E-06 3.14714248E-06 1.15776947E-06 2.47394553E-07 2.030737E-08 9.01880737E-10
+ Atm_omg1d(1:, 2) = 41*0.961849332
+ Atm_apf1d(1:, 2) = 41*2
+ 
+ Atm_tmp1d = 289.8373, 289.4140, 289.0836, 288.7714, 288.4681, 288.1688, 287.8713, 287.5797, 287.3877, 287.1964, 287.1017, 287.0117, 286.9299, 286.8552, 286.7851, 286.7181, 286.6534, 286.5898, 286.5269, 286.4650, 286.4034, 286.3411, 286.2814, 286.2371, 286.2323, 286.3112, 286.5654, 286.9951, 287.4651, 287.8364, 288.0257, 288.4250, 289.7000, 285.2000, 279.2000, 273.2000, 261.2000, 248.2000, 235.3000, 215.7000, 219.2000, 233.7000, 
+ Atm_ext1d(1:, 1) =  1.09831E-05,  1.09583E-05,  1.09313E-05,  1.09039E-05,  1.08765E-05,  1.08488E-05,  1.08211E-05,  1.07979E-05,  1.07794E-05,  1.07655E-05,  1.07561E-05,  1.07464E-05,  1.07365E-05,  1.07263E-05,  1.07161E-05,  1.07057E-05,  1.06953E-05,  1.06848E-05,  1.06743E-05,  1.06639E-05,  1.06534E-05,  1.06429E-05,  1.06321E-05,  1.06202E-05,  1.06061E-05,  1.05873E-05,  1.05620E-05,  1.05329E-05,  1.05049E-05,  1.04821E-05,  1.03784E-05,  1.00371E-05,  9.31107E-06,  8.41467E-06,  7.60792E-06,  6.52350E-06,  5.26843E-06,  4.21713E-06,  2.72075E-06,  1.30620E-06,  4.30703E-07, 
+ Atm_omg1d(1:, 1) = 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 
+
+ Atm_apf1d(1:, 1) = 41*-1
+
+ Atm_abs1d(1: 41,1) = 2.38419E-07,  2.38419E-07,  2.38419E-07,  2.38419E-07,  2.38419E-07,  2.38419E-07,  2.38419E-07,  2.35439E-07,  2.35439E-07,  2.38418E-07,  2.38419E-07,  2.38419E-07,  2.38418E-07,  2.38419E-07,  2.38419E-07,  2.38418E-07,  2.38419E-07,  2.38419E-07,  2.38418E-07,  2.38419E-07,  2.38419E-07,  2.38418E-07,  2.38419E-07,  2.38419E-07,  2.38418E-07,  2.38419E-07,  2.38419E-07,  2.38418E-07,  2.38419E-07,  2.38419E-07,  2.36803E-07,  2.35450E-07,  2.34691E-07,  2.38805E-07,  2.46674E-07,  2.62210E-07,  2.92864E-07,  3.34434E-07,  6.02819E-07,  1.14080E-06,  1.25665E-06, 
+/
+&mcarSfc_nml_job
+ Sfc_idread = 1
+ Sfc_tmp = 300.0
+ Sfc_mtype = 2
+ Sfc_param = 0.2, 0.0, 1.33, 1.0e-9, 0.02
+/
+&mcarSrc_nml_job
+ Src_flx   = 6.2831853
+ Src_qmax  = 0.5
+ Src_wlen  = 10.0
+ Src_dwlen = 0.0
+ Src_mtype = 1
+ Src_mphi  = 0
+ Src_the   = 120.0
+ Src_phi   = 180.0
+ Src_apsize = 0.5 ! aperture size
+/
+&mcarRad_nml_job
+ Rad_mrproj = 0
+ Rad_frmod = 0.33
+ Rad_xpos  = 5*0.45
+ Rad_ypos  = 5*0.5
+ Rad_zloc  = 95, 305, 655, 14050, 855
+ Rad_rmin0 = 5*10.0
+ Rad_rmax0 = 5*18000.0
+ Rad_the   = 90, 90, 105, 105, 105
+ Rad_phi   = 0, 0, 0, 0, 180
+ Rad_psi   = 5*270
+ Rad_umax  = 5*140
+ Rad_vmax  = 5*110
+ Rad_qmax  = 5*180.0
+ Rad_apsize = 5*0.1
+/
+
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job
+ Atm_idread = 0 /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 117.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 195 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 114.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 295 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 111.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 395 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 108.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 495 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 105.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 595 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 102.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 695 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 99.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 795 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 96.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 895 /
+
+!--- A new job ---
+&mcarWld_nml_job /
+&mcarAtm_nml_job /
+&mcarSfc_nml_job /
+&mcarSrc_nml_job
+ Src_the   = 93.0 /
+&mcarRad_nml_job
+ Rad_zloc  = 995 /

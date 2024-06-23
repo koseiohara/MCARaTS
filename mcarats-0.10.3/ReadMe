@@ -1,0 +1,125 @@
+##  Monte Calro Atmospheric Radiative Transfer Simulator (MCARaTS)
+
+# Version 0.10.3
+
+# Release date: Sep. 6, 2016
+
+# License
+
+MCARaTS is released under GNU GPL version 3. See the copy of the GNU GPL (COPYING).
+
+    Copyright (C) 2006-2016 Hironobu Iwabuchi and Rintaro Okamura
+
+    MCARaTS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    MCARaTS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with MCARaTS.  If not, see <http://www.gnu.org/licenses/>.
+
+
+# Introduction
+
+  MCARaTS is a scientific software including codes to simulate the three-dimensional (3-D) radiative transfer (RT) in the atmosphere, based on the forward-propagating Monte Carlo photon-transport algorithm. The codes can be applied to simulations of radiative energy budget and quasi-observations with optical instruments (passive/active sensors). MCARaTS has a general purpose RT solver, for which optical properties should be input. Polarization is not taken inot account in the current version.
+  Useful pre-/post-processing codes to handle input/output data for the RT simulators are also included in the package. The RT simulators are summarized as follows:
+
+    * What's good: Easy to use, numerically-efficient, and parallelized
+    * RT solvers
+          - Fully-three-dimensional RT (F3D)
+          - Partially-three-dimensional RT (P3D)
+          - Independent column (pixel) approximation (ICA)
+	  - Approximate, 3D solver mainly for volume rendering
+    * Methods and techniques
+          - The maximum cross section method that is adopted for super-cells
+          - The local estimation methods
+          - Truncation approximations transforming scattering phase function
+          - Collision-forcing method for optically thin media
+          - Artifitial numerical diffusion technique
+          - The Russian roulette method
+          - Parallelization using MPI (optional)
+    * Input
+          - One-dimensionally stratified media (gases/aerosols/hydrometeors)
+          - Three-dimensionally inhomogeneous media (gases/aerosols/clouds)
+          - Three-dimensionally inhomogeneous absorbing gases modeled by 
+            correlated k-distribution (CKD) method
+          - Two-dimensionally inhomogeneous macroscopically-flat surface
+               -- black/Lambertian reflector
+               -- diffusive/specular mixed reflector (rough micro-facets)
+               -- Rahman-Pinty-Verstraete (RPV) BRDF model
+               -- Li-Sparse-Ross-Thick (LSRT) BRDF model
+          - Sources can be a localized source or solar incidence from top
+            and/or thermal emission
+    * Output
+          - Area-averaged upward/downward/direct fluxes
+          - Volume-averaged heating/cooling rates
+          - Radiances averaged over some finite area and/or solid angle
+	  - Pathlength statistics (three types) for each radiance value
+	      -- Layer air mass factors
+	      -- Air mass factors for user-specified weighting function profile
+	      -- Time-resolved histgram of radiance contributions
+    * Requirements
+          - Unix/linux-like environment
+          - Fortran 90/95 compiler
+          - MPI (Message Passing Interface) for parallelization (optional)
+
+
+# Files
+
+  After unpacking the archive (tar-gzipped file), you will find the following files:
+
+	./ReadMe    : this file
+	./COPYING   : the license
+	./src	    : source codes
+	./shl	    : shell scripts
+	./examples  : example I/O files
+
+
+# Installation
+
+  After customizing "src/Common.mk" for your computing system, you can build and install executables as follows,
+
+    % cd src
+    % make
+    % make install
+    % cd ..
+
+That is all in most cases. Any problem? Are you trying to make MPI-parallelized code? For details, see the user's guide.
+
+
+# References
+
+H. Iwabuchi, 2006: Efficient Monte Carlo methods for radiative transfer modeling. Journal of the Atmospheric Sciences, 63, 2324-2339.
+
+H. Iwabuchi, and H. Kobayashi, 2008: Modeling of radiative transfer in cloudy atmospheres and plant canopies using Monte Carlo methods. FRCGC Technical Report, No.8, 199pp.
+
+The above report can be delivered to you by request. Please feel free to ask. English and Japanese versions are available.
+
+
+# Contact
+
+  The MCARaTS project is supported by volunteers. Collaborators are very welcome. Your feedbacks, such as bug reports, comments and feature requests, can also help the project.
+
+   Project coordinator (as the copyright holder):
+	Hiro Iwabuchi
+	E-mail: hiroiwa at m.tohoku.ac.jp (at=@)
+
+
+# Acknowledgements
+
+  Large-eddy simulation data of atmospheric and cloud properties in the "examples" directory were kindly provided from Dr. Akira T. Noda of FRCGC, JAMSTEC, Japan.
+  Bug reports and comments by several people greatly helped to improve the MCARaTS software.
+
+
+# Web site
+
+  Up-to-date version and online-documents are available on the web:
+
+	https://sites.google.com/site/mcarats/
+
+It is a good idea to find the web site using search engine (e.g., Google), because the site address is not permanent.

@@ -1,0 +1,54 @@
+ 
+ * Random number seed =    97835096 for PE           0
+ mcarWld__jobs: start, isrc =           1
+ mcarWld__jobs: finished a job           1
+ CPU time (s) =   5.79406600000000     
+ Time per simulation (s) =   5.79406600000000     
+ 
+ * Random number seed =   191043416 for PE           0
+ mcarWld__jobs: start, isrc =           1
+ mcarWld__jobs: finished a job           1
+ CPU time (s) =   5.76752400000000     
+ Time per simulation (s) =   5.76752400000000     
+ 
+ * Random number seed =   268717016 for PE           0
+ mcarWld__jobs: start, isrc =           1
+ mcarWld__jobs: finished a job           1
+ CPU time (s) =   5.76542100000000     
+ Time per simulation (s) =   5.76542100000000     
+ 
+ * Random number seed =   361925336 for PE           0
+ mcarWld__jobs: start, isrc =           1
+ ** Simulating for ikd=           1
+ mcarWld__jobs: start, isrc =           2
+ ** Simulating for ikd=           1
+ mcarWld__jobs: finished a job           1
+ CPU time (s) =   3.29622000000000     
+ Time per simulation (s) =   1.64811000000000     
+ 
+ * Random number seed =   424064216 for PE           0
+ mcarWld__jobs: start, isrc =           1
+ ** Simulating for ikd=           1
+ mcarWld__jobs: start, isrc =           2
+ ** Simulating for ikd=           1
+ mcarWld__jobs: finished a job           1
+ CPU time (s) =   2.25443800000000     
+ Time per simulation (s) =   1.12721900000000     
+ 
+ * Random number seed =   455133656 for PE           0
+ mcarWld__jobs: start, isrc =           1
+ ** Simulating for ikd=           1
+ mcarWld__jobs: start, isrc =           2
+ ** Simulating for ikd=           1
+ mcarWld__jobs: finished a job           1
+ CPU time (s) =   2.63083100000000     
+ Time per simulation (s) =   1.31541550000000     
+ 
+ * Random number seed =   501737816 for PE           0
+ mcarWld__jobs: start, isrc =           1
+ ** Simulating for ikd=           1
+  fsatm, fssfc, etot :  0.928407293086536       7.159270691346381E-002
+   1143770983.04326     
+ mcarWld__jobs: finished a job           1
+ CPU time (s) =   1.65996600000000     
+ Time per simulation (s) =   1.65996600000000     

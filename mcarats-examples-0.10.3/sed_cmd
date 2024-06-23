@@ -1,0 +1,192 @@
+#s/\&src/\&mcarats_env\ mverb=0\ \/\ \ \&mcarats_job/g
+#s/\&tech/\&mcarats_tech\ nscatab=20000/g
+#s/\&integ/\&mcarats_samp\ mrkind=0/g
+#s/\&model/\&mcarats_atm\ np1d=1/g
+#s/\&mdlsfc/\&mcarats_sfc/g
+#s/\&mdlphs/\&mcarats_sca\ knai=200/g
+#s/\&mdla3d/\&mcarats_atm/g
+
+#s/filea3d/fileatm/g
+#s/filephs/filesca/g
+#s/jtech/mtech/g
+#s/nbyte/\!nbyte/g
+#s/jsfc2d/jsfc/g
+#s/psfc3d/psfc/g
+#s/npar/np3d/g
+#s/ext1st/extp1d\(1\:\,\ 1\)/g
+#s/ext2nd/extp1d\(1\:\,\ 2\)/g
+#s/ext3rd/extp1d\(1\:\,\ 3\)/g
+#s/omg1st/omgp1d\(1\:\,\ 1\)/g
+#s/omg2nd/omgp1d\(1\:\,\ 2\)/g
+#s/omg3rd/omgp1d\(1\:\,\ 3\)/g
+#s/jpf1st/jpfp1d\(1\:\,\ 1\)/g
+#s/jpf2nd/jpfp1d\(1\:\,\ 2\)/g
+#s/jpf3rd/jpfp1d\(1\:\,\ 3\)/g
+
+#s/jpfp1d/apfp1d/g
+
+#s/ahcam/aucam/g
+#s/jzrdc/\!jzrdc/g
+#s/jzcam/\!jzcam/g
+
+#s/nrdc/ncam/g
+#s/nxc/nxr/g
+#s/nyc/nyr/g
+#s/therdc/thecam/g
+#s/phirdc/phicam/g
+#s/zrdc/zcam/g
+#s/rmidcam/\!rmidcam/g
+#s/ifmta3d/ifmtatm/g
+
+# Definition of apfp1d has been chaned: apfp1d = -1 for Rayleigh (instead of isotropic)
+# replace all apfp1d values : if 0 --> then -1
+
+
+## 01/02/2009
+
+#s/fileatm/Atm_inpfile/g
+#s/ifmtatm/Atm_mfmt/g
+###s/np1d/Atm_np1d/g
+###s/np3d/Atm_np3d/g
+#s/jtmplev/mtprof/g
+#s/tmpa1d/Atm_tmp/g
+#s/extp1d/Atm_ext/g
+#s/omgp1d/Atm_omg/g
+#s/apfp1d/Atm_apf/g
+#s/absg1d/Atm_abs/g
+
+#s/filesfc/Sfc_inpfile/g
+#s/ifmtsfc/Sfc_mfmt/g
+#s/mbrdf/Sfc_mbrdf/g
+#s/nxb/Sfc_nxb/g
+#s/nyb/Sfc_nyb/g
+#s/tmps/Sfc_tmp/g
+#s/jsfc/Sfc_mtype/g
+#s/psfc/Sfc_param/g
+#s/nudsm/Sfc_nudsm/g
+#s/nurpv/Sfc_nurpv/g
+#s/nulsrt/Sfc_nulsrt/g
+#s/nqsfc/Sfc_nqtab/g
+#s/srmin/Sfc_rrmax/g
+#s/srexp/Sfc_rrexp/g
+
+#s/filesca/Sca_inpfile/g
+#s/ifmtsca/Sca_mfmt/g
+#s/knai/Sca_knai/g
+#s/npf/Sca_npf/g
+#s/iSca_npfile/inpfile/g
+#s/qtfmax/Sca_qtfmax/g
+#s/nscatab/Sca_ntg/g
+
+#s/jsflx/mflx/g
+#s/jshrt/mhrt/g
+#s/mrkind/mtarget/g
+#s/mplen/Rad_mplen/g
+#s/mpixmap/Rad_mpmap/g
+#s/nxr/Rad_nxr/g
+#s/nyr/Rad_nyr/g
+#s/nwf/Rad_nwf/g
+#s/ntp/Rad_ntp/g
+#s/tpmin/Rad_tpmin/g
+#s/tpmax/Rad_tpmax/g
+#s/dens/Rad_wfunc/g
+#s/phicam/Rad_phi/g
+#s/thecam/Rad_the/g
+#s/psicam/Rad_psi/g
+#s/rmincam/Rad_rmin/g
+#s/rmaxcam/Rad_rmax/g
+#s/aucam/Rad_umax/g
+#s/avcam/Rad_vmax/g
+#s/amcam/Rad_qmax/g
+#s/diacam/Rad_asize/g
+#s/xcam/Rad_ax/g
+#s/ycam/Rad_ay/g
+#s/zcam/Rad_z/g
+#s/ncam/nrad/g
+#s/diff0/Flx_diff0/g
+#s/diff1/Flx_diff1/g
+#s/difh0/Flx_difh0/g
+#s/difh1/Flx_difh1/g
+#s/difr0/Rad_difr0/g
+#s/difr1/Rad_difr1/g
+#s/zetamin/Rad_zetamin/g
+#s/fmodcam/Rad_frmod/g
+
+#s/dqsrc/Src_qmax/g
+#s/thesrc/Src_the/g
+#s/dwlen/Src_dwlen/g
+#s/wlen/Src_wlen/g
+#s/dSrc_wlen/dwlen/g
+#s/xsrc/Src_ax/g
+#s/ysrc/Src_ay/g
+#s/zsrc/Src_z/g
+#s/diasrc/Src_asize/g
+#s/jdefsrc/Src_mtype/g
+#s/jphisrc/Src_mphi/g
+#s/jnorm/mnorm/g
+#s/nsss/iso_SS/g
+#s/nstrun/iso_tru/g
+#s/nsmax/iso_max/g
+#s/fsrc/Src_flx/g
+#s/phisrc/Src_phi/g
+
+#s/wmin/Pho_wmin/g
+#s/wmax/Pho_wmax/g
+#s/wfac/Pho_wfac/g
+#s/pfpeak/Pho_pfpeak/g
+#s/nlcf/Tec_nplcf/g
+#s/rlcf/Tec_rmlcf/g
+#s/emtmin/Tec_emtmin/g
+#s/dtaumin/Tec_dtaumin/g
+#s/taumin/Tec_taumin/g
+#s/dTec_taumin/dtaumin/g
+#s/nchi/Sca_nchi/g
+#s/fsupg/Tec_fgsup/g
+#s/fsupi/Tec_fisup/g
+#s/nzzmax/Tec_nzzsup/g
+
+#s/mnorm/\!mnorm/g
+
+
+## 21/02/2009
+
+#s/mcarats_env/mcarWld_init/g
+#s/mcarats_atm/mcarAtm_job/g
+#s/mcarats_sfc/mcarSfc_init/g
+#s/mcarats_sca/mcarSca_init/g
+#s/mcarats_samp/mcarRad_job/g
+#s/mcarats_job/mcarSrc_job/g
+#s/mcarats_tech/mcarWld_job/g
+#s/mverb/Wld_mverb/g
+#s/np1d/Atm_np1d/g
+#s/np3d/Atm_np3d/g
+#s/xbin/Atm_dx/g
+#s/ybin/Atm_dy/g
+#/_n/!s/nx/Atm_nx/g
+#/_n/!s/ny/Atm_ny/g
+#/nz3/!s/nz/Atm_nz/g
+#s/nz3/Atm_nz3/g
+#s/iz3l/Atm_iz3l/g
+#s/mtprof/Atm_mtprof/g
+#s/zgrd/Atm_zgrd0/g
+#s/nkd/Atm_nkd/g
+#s/wkd/Atm_wkd0/g
+#s/Atm_ext/Atm_ext1d/g
+#s/Atm_omg/Atm_omg1d/g
+#s/Atm_apf/Atm_apf1d/g
+#s/Atm_tmp/Atm_tmp1d/g
+#s/Atm_abs/Atm_abs1d/g
+#s/mtarget/Wld_mtarget/g
+#s/nrad/Rad_nrad/g
+#s/Rad_z/Rad_zloc/g
+#s/Rad_ax/Rad_xpos/g
+#s/Rad_ay/Rad_ypos/g
+#s/Rad_asize/Rad_apsize/g
+#s/nsrc/Src_nsrc/g
+#s/mtech/Wld_moptim/g
+#s/Tec_rmlcf/Wld_rmlcf/g
+#s/iso_SS/Pho_iso_SS/g
+#s/iso_tru/Pho_iso_tru/g
+#s/iso_max/Pho_iso_max/g
+#s/mflx/Flx_mflx/g
+#s/mhrt/Flx_mhrt/g

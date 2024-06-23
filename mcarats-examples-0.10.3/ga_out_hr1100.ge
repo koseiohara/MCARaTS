@@ -1,0 +1,38 @@
+setshade 1
+setpanels 1 1 1 1
+
+*
+c
+set parea 1 8 1 8
+*open out_hr1100.ctl
+open test_hr1100.ctl
+
+c
+setclevs 0 50 2
+d a2(t=1)
+cbar2 1 1
+draw xlab X
+draw ylab Y
+draw title Downward flux, 11000 nm
+printim img_hr1100_fdn_t1.png x1100 y850 white
+
+
+*
+c
+setshade 2
+set y 48
+set z 1 41
+setclevs -0.8 0.8 0.05
+setpanels 1 2 1 2
+d b1(t=1)
+cbar2 1 1
+draw ylab Z
+draw title Heating rate (W/m^3), 11000 nm, Y=48
+set z 1
+setpanels 1 2 1 1
+set vrange 0 50
+d a2(t=1)
+draw xlab X
+printim img_hr1100_hrt_t1_y48.png x1100 y850 white
+
+close 1

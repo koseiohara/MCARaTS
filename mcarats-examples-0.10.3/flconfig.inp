@@ -1,0 +1,30 @@
+15	: na
+2	: nvar
+12800 12800	: xmax, ymax
+120 135 10 17.9	: pthe, pphi, shr0, shr1
+# Locatoins: x, y, z
+1e4   1e4   3e4
+2e4   2e4   2e4
+3e4   3e4   1e4
+4e4   4e4   1800
+5e4   5e4   580
+6e4   6e4   250
+7e4   7e4   150
+8e4   8e4   150
+9e4   9e4   200
+10e4  10e4  350
+11e4  11e4  550
+12e4  12e4  800
+13e4  13e4  900
+14e4  14e4  900
+15e4  15e4  900
+# Linearly-varying variable - 1
+4	: nv
+0    270	: time, value
+5    270
+5.5  -90
+7    -90
+# Linearly-varying variable - 2
+2	: nv
+0 60	: time, value
+1 120

@@ -1,0 +1,20 @@
+%mdlphs
+# a comment line
+7  # naa (# of angles)
+2  # np (# of P data)
+# ang, phs for ipf=1
+  0  100.0
+ 30  10.0
+ 60  1.0
+ 90  1.0
+120  1.0
+150  1.0
+180  1.0
+# ang, phs for ipf=1
+  0  0.1
+ 30  0.1
+ 60  0.1
+ 90  0.1
+120  0.1
+150  0.1
+180  0.1

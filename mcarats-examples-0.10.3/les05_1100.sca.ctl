@@ -1,0 +1,14 @@
+DSET ^les05_1100.sca
+*OPTIONS LITTLE_ENDIAN
+*OPTIONS BIG_ENDIAN
+OPTIONS template
+TITLE les05_1100.sca
+UNDEF 1.0e+37
+XDEF       203 LINEAR 1 1
+YDEF         1 LINEAR 1 1
+ZDEF        60 LINEAR 1 1
+TDEF         1 LINEAR 00:00Z00JAN0001 1YR
+VARS         2
+ang 1 99 Angles (deg.)
+phs 60 99 Phase function
+ENDVARS

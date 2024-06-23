@@ -1,0 +1,17 @@
+%mdla3d
+# tmpa3d (perturbations of atmospheric temperature)
+1 2 3 4 5 6 # level 1
+1 2 3 4 5 6 # level 2
+1 2 3 4 5 6 # level 3
+# absa3d (perturbations of absorption coefficient) for ikd=1
+1e-5 2e-5 3e-5 4e-5 5e-5 6e-5 # iz3=1
+1e-5 2e-5 3e-5 4e-5 5e-5 6e-5 # iz3=2
+# extp3d (extinction coefficient of particles) for ip3d=1
+1e-2 0 1e-2 0 1e-2 0 # iz3=1
+0 1e-2 0 1e-2 0 1e-2 # iz3=2
+# omgp3d (single scattering albedo of particles) for ip3d=1
+6*0.99 # iz3=1
+6*1.00 # iz3=2
+# apfp3d (phase function specification parameter of particles) for ip3d=1
+6*1.23 # iz3=1
+6*1.23 # iz3=2

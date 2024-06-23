@@ -1,0 +1,16 @@
+set pfx=test
+#set pfx=out
+set ptot_ci=1e4
+set ptot_sr=1e5
+set ptot_tr=1e6
+set exec=mcarats
+
+$exec $ptot_ci 0 conf_ci0045 $pfx"_ci0045"
+$exec $ptot_ci 0 conf_ci0055 $pfx"_ci0055"
+$exec $ptot_ci 0 conf_ci0067 $pfx"_ci0067"
+
+$exec $ptot_sr 0 conf_rs0067 $pfx"_rs0067"
+$exec $ptot_sr 0 conf_rs0213 $pfx"_rs0213"
+
+$exec $ptot_sr 0 conf_hr0213 $pfx"_hr0213"
+$exec $ptot_tr 0 conf_hr1100 $pfx"_hr1100"
